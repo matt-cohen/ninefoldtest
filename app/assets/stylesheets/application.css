@@ -1,0 +1,409 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery-ui
+ *= require jquery-ui/autocomplete
+ *= require gritter
+ *= require gumby
+ */
+/*
+a :visited {
+text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}*/
+
+h1, h2, h3, h4, h5, p {
+  letter-spacing: 0em;
+}
+
+.buttoncont {
+  text-align: center;
+}
+
+.align_center {
+  text-align: center;
+  margin: auto;
+
+}
+
+#viewdesc {
+  margin-top:60px;
+  font-size:40px;
+  font-style:bold;
+}
+
+.charts {
+  margin: auto;
+}
+
+#pos_chart {
+  margin-bottom:-50%;
+}
+
+#force_chart {
+  margin-bottom:-50%;
+}
+
+#separate {
+  height: 600px;
+  width: 300px;
+  position: absolute;
+  left: 0px;
+  width: 300px;
+}
+
+.c3container {
+  margin-top:20px;
+  text-align: center;
+}
+
+#compliance_container {
+  vertical-align: middle;
+  margin: auto;
+ /* width: 30%;*/
+  text-align: center;
+}
+
+#compliance {
+  font-size: 75px;
+}
+
+#drilldown {
+   /* -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);*/
+    margin-left:-15%;
+}
+/*-- Chart --*/
+
+.c3 svg {
+  font: 10px sans-serif;
+}
+.c3 path, .c3 line {
+  fill: none;
+  stroke: #000;
+}
+.c3 text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.c3-legend-item-tile,
+.c3-xgrid-focus,
+.c3-ygrid,
+.c3-event-rect,
+.c3-bars path {
+  shape-rendering: crispEdges;
+}
+
+.c3-chart-arc path {
+  stroke: #fff;
+
+}
+
+.c3-chart-arc text {
+  fill: #fff;
+  font-size: 13px;
+}
+
+/*-- Axis --*/
+
+.c3-axis-x .tick {
+}
+.c3-axis-x-label {
+}
+
+.c3-axis-y .tick {
+}
+.c3-axis-y-label {
+}
+
+.c3-axis-y2 .tick {
+}
+.c3-axis-y2-label {
+}
+
+/*-- Grid --*/
+
+.c3-grid line {
+  stroke: #aaa;
+}
+.c3-grid text {
+  fill: #aaa;
+}
+.c3-xgrid, .c3-ygrid {
+  stroke-dasharray: 3 3;
+}
+.c3-xgrid-focus {
+}
+
+/*-- Text on Chart --*/
+
+.c3-text {
+}
+
+.c3-text.c3-empty {
+  fill: #808080;
+  font-size: 2em;
+}
+
+/*-- Line --*/
+
+.c3-line {
+  stroke-width: 1px;
+}
+/*-- Point --*/
+
+.c3-circle._expanded_ {
+  stroke-width: 1px;
+  stroke: white;
+}
+.c3-selected-circle {
+  fill: white;
+  stroke-width: 2px;
+}
+
+/*-- Bar --*/
+
+.c3-bar {
+  stroke-width: 0;
+}
+.c3-bar._expanded_ {
+  fill-opacity: 0.75;
+}
+
+/*-- Arc --*/
+
+.c3-chart-arcs-title {
+  font-size: 1.3em;
+}
+
+/*-- Focus --*/
+
+.c3-target.c3-focused path.c3-line, .c3-target.c3-focused path.c3-step {
+  stroke-width: 2px;
+}
+
+/*-- Region --*/
+
+.c3-region {
+  fill: steelblue;
+  fill-opacity: .1;
+}
+
+/*-- Brush --*/
+
+.c3-brush .extent {
+  fill-opacity: .1;
+}
+
+/*-- Select - Drag --*/
+
+.c3-dragarea {
+}
+
+/*-- Legend --*/
+
+.c3-legend-item {
+  font-size: 12px;
+}
+
+.c3-legend-background {
+  opacity: 0.75;
+  fill: white;
+  stroke: lightgray;
+  stroke-width: 1
+}
+
+/*-- Tooltip --*/
+
+.c3-tooltip {
+  border-collapse:collapse;
+  border-spacing:0;
+  background-color:#fff;
+  empty-cells:show;
+  -webkit-box-shadow: 7px 7px 12px -9px rgb(119,119,119);
+     -moz-box-shadow: 7px 7px 12px -9px rgb(119,119,119);
+          box-shadow: 7px 7px 12px -9px rgb(119,119,119);
+  opacity: 0.9;
+}
+.c3-tooltip tr {
+  border:1px solid #CCC;
+}
+.c3-tooltip th {
+  background-color: #aaa;
+  font-size:14px;
+  padding:2px 5px;
+  text-align:left;
+  color:#FFF;
+}
+.c3-tooltip td {
+  font-size:13px;
+  padding: 3px 6px;
+  background-color:#fff;
+  border-left:1px dotted #999;
+}
+.c3-tooltip td > span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+.c3-tooltip td.value{
+  text-align: right;
+}
+
+.c3-area {
+  stroke-width: 0;
+  opacity: 0.2;
+}
+
+.c3-chart-arcs .c3-chart-arcs-background {
+  fill: #e0e0e0;
+  stroke: none;
+}
+.c3-chart-arcs .c3-chart-arcs-gauge-unit {
+  fill: #000;
+  font-size: 16px;
+}
+.c3-chart-arcs .c3-chart-arcs-gauge-max {
+  fill: #777;
+}
+.c3-chart-arcs .c3-chart-arcs-gauge-min {
+  fill: #777;
+}
+
+.c3-chart-arc .c3-gauge-value {
+  fill: #000;
+  font-size: 28px;
+}
+
+/*Start Actual Pages*/
+body {
+  text-align:center;
+}
+
+.signin {
+  padding:50px;
+  text-align: center;
+  border-radius:10px;
+  font-size: 30px;
+  display:inline-block;
+  border:2px solid gray;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+  margin:2%;
+  background-color: #F8F8F8;
+}
+
+.compcont {
+  padding-bottom:30px;
+  padding-left:20px;
+  padding-right:20px;
+  text-align: center;
+  border-radius:10px;
+  font-size: 30px;
+  display:inline-block;
+  background-color: #F8F8F8;
+}
+
+
+#patient_name {
+  font-size: 90px;
+  font-style:bold;
+  margin-top:10%;
+  margin-bottom:9%;
+}
+
+#patient_name_smaller {
+  font-size: 70px;
+  font-style:bold;
+  margin-top:10px;
+  margin-bottom:9%;
+}
+
+#back_to_list {
+  margin-left:2%;
+  border-radius: 5px;
+  padding:10px;
+  float:left;
+  margin-top:-6%;
+}
+
+#editsettings {
+  margin-right:2%;
+  border-radius: 5px;
+  padding:10px;
+  float:right;
+  margin-top:-6%;
+}
+
+
+.remember_me {
+  font-size: 16px;
+  vertical-align: auto;
+}
+
+#nav1 {
+  width: 100%;
+  margin:auto;
+}
+
+#hiperson {
+  color:white;
+  margin-top:10%;
+  font-size:20px;
+}
+
+tr:nth-of-type(odd) {
+  background-color: #cfd6d8;
+}
+
+tr:nth-of-type(even) {
+}
+
+td.tr#tr {
+  text-align: center;
+  padding: 3px 3px 3px 3px;
+}
+
+/*.logo {
+  background-color: red;
+}*/
+
+#reallogo {
+  width:100%;
+  position:absolute;
+  margin: auto;
+  padding:2px;
+}
+
+#incentivetitles {
+  font-style:bold;
+  font-size:20px;
+  margin:5px;
+}
+
+#incentivetext {
+  font-style:bold;
+  font-size:10px;
+  margin:5px;
+} 

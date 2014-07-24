@@ -1,0 +1,44 @@
+ <!-- f.label :email- if we need it!  -->
+
+<div class= "signin">
+
+<div class="row">
+  <h2><b>Welcome to Brace Yourself</b></h2>
+</div>
+
+<div class="row">
+  <h4>Please Sign In to Get Started</h4>
+</div>
+<br>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ 
+<div class="row">
+  <div class='field'>
+  <%= f.email_field :email, autofocus: true, placeholder: "Email", :class=>"wide email input"%>
+  </div>
+
+  <div class='field'>
+  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :class=>"wide email input" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="remember_me">
+  <% if devise_mapping.rememberable? -%>
+    <%= f.check_box :remember_me %>Remember me
+  <% end %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="medium primary rounded metro btn"><%= f.submit "Sign in", :class => "pure-button" %>
+  </div>
+</div>
+<% end %>
+
+<div class="remember_me">
+<%= render "devise/shared/links" %>
+</div>
+
+</div>
+
